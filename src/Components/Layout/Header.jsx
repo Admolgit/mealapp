@@ -6,7 +6,7 @@ import imgHeader from '../../assets/images/meals-header.jpeg';
 function Header(props) {
   return <Fragment>
     <header className={classes.header}>
-      <h1 className={classes.title}>MealApp</h1>
+      <h1 className={classes.title}>AfriKitchen</h1>
       <HeaderCartButton onClick={props.onShowCart} />
     </header>
     <div className={classes['main-image']}>

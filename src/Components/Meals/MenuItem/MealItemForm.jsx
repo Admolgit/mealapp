@@ -9,11 +9,11 @@ function MealItemForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const amount = inputAmountRef.current.value;
+    const enteredAmount = inputAmountRef.current.value;
 
-    const amountNumber = +amount;
+    const amountNumber = +enteredAmount;
 
-    if (amount.trim().length === 0 || amountNumber < 1 || amountNumber > 5) {
+    if (enteredAmount.trim().length === 0 || amountNumber < 1 || amountNumber > 5) {
       setAmountIsValid(false);
       return;
     }
@@ -22,7 +22,7 @@ function MealItemForm(props) {
   };
 
   return (
-    <form className="form" onClick={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <Input
         ref={inputAmountRef}
         label="Amount"

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../UI/input.css';
 
-const Input = React.forwardRefInput((props, ref) => {
+const Input = React.forwardRef((props, ref) => {
   return (
     <div className="input">
       <label htmlFor={props.input.id}>{props.label}</label>

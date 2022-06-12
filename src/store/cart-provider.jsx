@@ -7,14 +7,50 @@ const defaultItem = {
 }
 
 const CartReducer = (state, action) => {
-  if(action.identifier === "ADD_ITEM") {
-    const newItems = state.items.concat(action.item);
+  if(action.type === "ADD_ITEM") {
+
+    const existingCartItemIndex = state.items.findIndex(item => item.id === action.item.id);
+
+    const existingCartItem = state.items[existingCartItemIndex];
+    let updatedItems;
+
+    if(existingCartItem) {
+      const updatedItem = {
+        ...existingCartItem,
+        amount: existingCartItem.amount + action.item.amount
+      }
+      updatedItems = [...state.items];
+      updatedItems[existingCartItemIndex] = updatedItem;
+    } else {
+      updatedItems = state.items.concat(action.item);
+    }
+
     const newTotalAmount = state.totalAmount + action.item.price * action.item.amount;
     return {
-      items: newItems,
+      items: updatedItems,
       totalAmount: newTotalAmount
     }
   }
+
+  if(action.type === "REMOVE_ITEM") {
+    const existingCartItemIndex = state.items.findIndex(item => item.id === action.item);
+    const existingCartItem = state.items[existingCartItemIndex];
+    const updatedTotalAmount = state.totalAmount - existingCartItem.price;
+    let updatedItems;
+    if(existingCartItem.amount === 1) {
+      updatedItems = state.items.filter(item => item.id !== action.item);
+    } else {
+      const updatedItem = {...existingCartItem, amount: existingCartItem.amount - 1};
+      updatedItems = [...state.items];
+      updatedItems[existingCartItemIndex] = updatedItem;
+    }
+
+    return {
+      items: updatedItems,
+      totalAmount: updatedTotalAmount
+    }
+  }
+
   return defaultItem;
 }
 
@@ -24,15 +60,15 @@ const CartProvider = props => {
 
   const addItemToCartHandler = item => {
     dispatchCartAction({
-      identifier: "ADD_ITEM",
-      payload: item
+      type: "ADD_ITEM",
+      item: item
     });
   }
 
   const removeItemFromCartHandler = id => {
     dispatchCartAction({
-      identifier: "REMOVE_ITEM",
-      payload: id
+      type: "REMOVE_ITEM",
+      item: id
     });
   }
 
