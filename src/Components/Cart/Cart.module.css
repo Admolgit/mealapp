@@ -40,6 +40,14 @@
   color: #8a2b06;
 }
 
+.buttons {
+  background-color: #8a2b06;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-top: 1rem;
+}
+
 .actions .button {
   background-color: #8a2b06;
   color: white;
