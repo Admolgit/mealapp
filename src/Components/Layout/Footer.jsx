@@ -31,7 +31,7 @@ const Footer = () => {
                   African food
                 </Link>
                 <Link className="nav-link" to="#">
-                  Intercontinental dishes
+                  Foreign dishes
                 </Link>
                 <Link className="nav-link" to="#">
                   Catering
@@ -62,26 +62,26 @@ const Footer = () => {
             </div>
           </div>
           <div className="child">
-            <h1>Social Media</h1>
+            <h1 className="social">Social Media</h1>
             <div className="children">
               <Router>
                 <Link className="nav-link" to="#">
-                  <i className="fab fa-facebook">
+                  <i className="fa fa-facebook">
                   <span style={{ marginLeft: "10px" }}>Facebook</span>
                   </i>
                 </Link>
                 <Link className="nav-link" to="#">
-                <i className="fab fa-instagram">
+                <i className="fa fa-instagram">
                   <span style={{ marginLeft: "10px" }}>Instagram</span>
                 </i>
                 </Link>
                 <Link className="nav-link" to="#">
-                <i className="fab fa-twitter">
+                <i className="fa fa-twitter">
                   <span style={{ marginLeft: "10px" }}>Twitter</span>
                 </i>
                 </Link>
                 <Link className="nav-link" to="#">
-                <i className="fab fa-youtube">
+                <i className="fa fa-youtube">
                   <span style={{ marginLeft: "10px" }}>Youtube</span>
                 </i>
                 </Link>
@@ -89,7 +89,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <p className="foot-1">Ademola 2021</p>
+        <p className="foot-1">Ademola &copy; 2021</p>
       </div>
     </div>
   );

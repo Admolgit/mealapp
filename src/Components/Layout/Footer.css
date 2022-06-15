@@ -4,37 +4,41 @@
   box-sizing: border-box;
 }
 
-.rows {
+.footer {
   width: 100%;
+  background-color: #000;
+  color:#fff;
+  border-top: 2mm ridge #8a2b06;
+  border-bottom: 2mm ridge #8a2b06;
+}
+
+.rows {
   position: relative;
   bottom: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  border-top: 1px solid #8a2b06;
-  color:#fff;
-  background-color: #000;
-}
-
-.about {
-  margin-top: -1.3rem;
+  font-weight: lighter;
 }
 
 .rows {
-  width: 100%;
+  width: 80%;
   display: flex;
+  margin: auto;
   justify-content: space-around;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-weight: lighter;
+  align-items: flex-start;
 }
 
 .children {
   margin-top: 0.5rem;
+  font-weight: lighter;
 }
 
 .child h1 {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -60,22 +64,65 @@
   .foot-1 {
     text-align: center;
     padding: 1rem 0;
-    font-size: 14px;
+    font-size: 12px;
     background-color: #ccc;
     color: #8a2b06;
   }
 
   .child h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: lighter;
     margin-bottom: 0.5rem;
+  }
+
+  .rows {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+    align-items: flex-start;
   }
   
   .nav-link,
   .nav-link  i {
     display: flex;
     text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+}
+
+@media (max-width: 1000px) {
+  .foot-1 {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 12px;
+    background-color: #ccc;
+    color: #8a2b06;
+  }
+
+  .child h1 {
     font-size: 16px;
+    font-weight: lighter;
+    margin-bottom: 0.5rem;
+  }
+
+  .rows {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: lighter;
+    align-items: flex-start;
+  }
+  
+  .nav-link,
+  .nav-link  i {
+    display: flex;
+    text-decoration: none;
+    font-size: 14px;
     margin-bottom: 0.5rem;
     color: #fff;
   }
